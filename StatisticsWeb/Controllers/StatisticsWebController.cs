@@ -16,28 +16,23 @@ namespace StatisticsWeb.Controllers
         {            
             manager = new Manager(new InMemory());
         }
-        [Route("lessons")]        
-        [HttpGet]       
-        public IHttpActionResult getLessonsWithGrade([FromUri]string start , [FromUri]string end)
-        {
-            throw new NotImplementedException();                        
-        }//done manager
+        [Route("lessons")]
         [HttpPut]
-        public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList)
+        public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList )
         {
             throw new NotImplementedException();                        
         }
-        [Route("lessons/nograde")]
-        [HttpGet]
-        public IHttpActionResult getLessonsWithNoGrade([FromUri]string start, [FromUri]string end)
+        [Route("lessons/graded")]        
+        [HttpGet]       
+        public IHttpActionResult getLessonsWithGrade([FromUri]string start , [FromUri]string end , [FromUri]int? pageOffset, [FromUri]int? itemsCounter)
         {
             throw new NotImplementedException();                        
         }
-        [Route("AvgGrade")]
+        [Route("lessons/nograded")]
         [HttpGet]
-        public IHttpActionResult avgGrade()
-        {            
+        public IHttpActionResult getLessonsWithNoGrade([FromUri]string start, [FromUri]string end , [FromUri]int? pageOffset, [FromUri]int? itemsCounter)
+        {
             throw new NotImplementedException();                        
-        }
+        }        
     }
 }

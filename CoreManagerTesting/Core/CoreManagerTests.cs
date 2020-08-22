@@ -1,263 +1,382 @@
-// using System;
-// using Xunit;
-// using StatisticsWebCoreManager.Core;
-// using StatisticsWebCoreManager.ICore;
-// using StatisticsWebRepository.IRepository;
-// using StatisticsWebRepository.Repository;
-// using StatisticsWebModels;
-// using Autofac.Extras.Moq;
-// using System.Collections.Generic;
-// using System.Linq;
+using System;
+using Xunit;
+using StatisticsWebCoreManager.Core;
+using StatisticsWebCoreManager.ICore;
+using StatisticsWebRepository.IRepository;
+using StatisticsWebRepository.Repository;
+using StatisticsWebModels;
+using Autofac.Extras.Moq;
+using System.Collections.Generic;
+using System.Linq;
+using Xunit.Sdk;
 
-// namespace CoreManagerTesting
-// {
-//     public class CoreManagerTests
-//     {
-//         Manager manager = new Manager((AutoMock.GetLoose()).Create<InMemory>());   
-//         [Fact]
-//         public void ManagerConstructor_WithNullRepository_ThrowsNullReferenceException()
-//         {
-//             Assert.Throws<NullReferenceException>(() => new Manager(null));
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_WithNullValueonStart_ThrowsArgumentNullException()
-//         {
-//             Assert.Throws<ArgumentNullException>("start", () => manager.getLessonsWithGrade(null, "4"));
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_WithNullValueonEnd_ThrowsArgumentNullException()
-//         {
-//             Assert.Throws<ArgumentNullException>("end", () => manager.getLessonsWithGrade("1", null));
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_WithStartAndEndParametersWithNull_returnsLessonsList()
-//         {
-//             IList<Lesson> expect = new List<Lesson>();
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getAllLessonsWithGrade())
-//                     .Returns(expect);
-//                 var tmpManager = mock.Create<Manager>();
-//                 var answer = tmpManager.getLessonsWithGrade(null,null);
-//                 Assert.Empty(answer);
-//                 Assert.NotNull(answer);
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_WithStartAndEndParametersWithNonNull_returnsLessonsList()
-//         {
-//             IList<Lesson> expect = new List<Lesson>();
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getLessonsWithGradeOnSpecificPeriod("1","3"))
-//                     .Returns(expect);
-//                 var tmpManager = mock.Create<Manager>();
-//                 var answer = tmpManager.getLessonsWithGrade("1", "3");
-//                 Assert.Empty(answer);
-//                 Assert.NotNull(answer);
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_DatabaseCrashesOngetAllLessonsWithGrade_catchException()
-//         {
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getAllLessonsWithGrade())
-//                     .Throws<TimeoutException>();
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Throws<Exception>(() => tmpManager.getLessonsWithGrade(null, null));
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithGrade_DatabaseCrashesOngetLessonsWithGradeOnSpecificPeriod_catchException()
-//         {
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getLessonsWithGradeOnSpecificPeriod("1", "3"))
-//                     .Throws<TimeoutException>();
-
-//                 var tmpManager = mock.Create<Manager>();                                
-//                 Assert.Throws<Exception>(()=>tmpManager.getLessonsWithGrade("1","3"));
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_WithNullValueonStart_ThrowsArgumentNullException()
-//         {
-//             Assert.Throws<ArgumentNullException>("start", () => manager.getLessonsWithNoGrade(null, "4"));
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_WithNullValueonEnd_ThrowsArgumentNullException()
-//         {
-//             Assert.Throws<ArgumentNullException>("end", () => manager.getLessonsWithNoGrade("1", null));
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_WithStartAndEndParametersWithNull_returnsLessonsList()
-//         {
-//             IList<Lesson> expect = new List<Lesson>();
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getAllLessonsNoWithGrade())
-//                     .Returns(expect);
-//                 var tmpManager = mock.Create<Manager>();
-//                 var answer = tmpManager.getLessonsWithNoGrade(null, null);
-//                 Assert.Empty(answer);
-//                 Assert.NotNull(answer);
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_WithStartAndEndParametersWithNonNull_returnsLessonsList()
-//         {
-//             IList<Lesson> expect = new List<Lesson>();
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getLessonsWithNoGradeOnSpecificPeriod("1", "3"))
-//                     .Returns(expect);
-//                 var tmpManager = mock.Create<Manager>();
-//                 var answer = tmpManager.getLessonsWithNoGrade("1", "3");
-//                 Assert.Empty(answer);
-//                 Assert.NotNull(answer);
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_DatabaseCrashesOngetAllLessonsWithGrade_catchException()
-//         {
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getAllLessonsNoWithGrade())
-//                     .Throws<TimeoutException>();
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Throws<Exception>(() => tmpManager.getLessonsWithNoGrade(null, null));
-//             }
-//         }
-//         [Fact]
-//         public void getLessonsWithNoGrade_DatabaseCrashesOngetLessonsWithGradeOnSpecificPeriod_catchException()
-//         {
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.getLessonsWithNoGradeOnSpecificPeriod("1", "3"))
-//                     .Throws<TimeoutException>();
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Throws<Exception>(() => tmpManager.getLessonsWithNoGrade("1", "3"));
-//             }
-//         }
-//         [Fact]
-//         public void updateLesson_ListOfLessonsWithNull_ThrowsNullReferenceException()
-//         {
-//             Assert.Throws<NullReferenceException>(() => manager.updateLesson(null));
-//         }
-//         [Fact]
-//         public void updateLesson_ListofLessonsEmpty_ThrowsArgumentException()
-//         {
-//             Assert.Throws<ArgumentException>("lessonList",()=>manager.updateLesson(new List<UpdateLesson>()));
-//         }
-//         [Fact]
-//         public void updateLesson_ListOfLessonsWithIdNull_ThrowsArgumentNullException()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = null , Grade = 5f});
-//             lessons.Add(new UpdateLesson() { Id = null, Grade = 10f });
-//             Assert.Throws<ArgumentNullException>("lessonListValues_Null",()=>manager.updateLesson(lessons));
-//         }
-//         [Fact]
-//         public void updateLesson_ListOfLessonsWithGradeNull_ThrowsArgumentNullException()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "1", Grade = null });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = null });
-//             Assert.Throws<ArgumentNullException>("lessonListValues_Null", () => manager.updateLesson(lessons));
-//         }
-//         [Fact]
-//         public void updateLesson_ListOfLessonsWithIdDoesntExists_Fails()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "100", Grade = 5f });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = 10f });
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.lessonListWithIdExists(lessons))
-//                     .Returns(false);
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Equal(UpdateLessonsValues.LessonExistsFails, tmpManager.updateLesson(lessons));
-//             }
-//         }
-//         [Fact]
-//         public void updateLesson_updateLessonRepositoryFail_Fails()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "100", Grade = 5f });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = 10f });
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.lessonListWithIdExists(lessons))
-//                     .Returns(true);
-//                 mock.Mock<IRepos>()
-//                    .Setup(db => db.updateLesson(lessons))
-//                    .Returns(false);
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Equal(UpdateLessonsValues.UpdateLessonFails, tmpManager.updateLesson(lessons));
-//             }
-//         }
-//         [Fact]
-//         public void updateLesson_updateLessonRepositoryPass_Pass()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "100", Grade = 5f });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = 10f });
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.lessonListWithIdExists(lessons))
-//                     .Returns(true);
-//                 mock.Mock<IRepos>()
-//                    .Setup(db => db.updateLesson(lessons))
-//                    .Returns(true);
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Equal(UpdateLessonsValues.UpdateLessonPass, tmpManager.updateLesson(lessons));
-//             }
-//         }
-//         [Fact]
-//         public void updateLesson_RepositoryCrashesOnMethodlessonListWithIdExists_ThrowsTimeoutException()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "100", Grade = 5f });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = 10f });
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.lessonListWithIdExists(lessons))
-//                     .Throws<TimeoutException>();
-                
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Throws<Exception>(() => tmpManager.updateLesson(lessons));
-//             }
-//         }
-//         [Fact]
-//         public void updateLesson_RepositoryCrashesOnMethodupdateLesson_ThrowsTimeoutException()
-//         {
-//             IList<UpdateLesson> lessons = new List<UpdateLesson>();
-//             lessons.Add(new UpdateLesson() { Id = "100", Grade = 5f });
-//             lessons.Add(new UpdateLesson() { Id = "2", Grade = 10f });
-//             using (var mock = AutoMock.GetLoose())
-//             {
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.lessonListWithIdExists(lessons))
-//                     .Returns(true);
-//                 mock.Mock<IRepos>()
-//                     .Setup(db => db.updateLesson(lessons))
-//                     .Throws<TimeoutException>();
-//                 var tmpManager = mock.Create<Manager>();
-//                 Assert.Throws<Exception>(() => tmpManager.updateLesson(lessons));
-//             }
-//         }
-//     }
-// }
+namespace CoreManagerTesting
+{
+    public class CoreManagerTests
+    {        
+        [Fact]
+        public void getLessonsWithGrade_withNullRepository_ThrowsNullReferenceException()
+        {
+            Assert.Throws<NullReferenceException>(() => new Manager(null));
+        }
+        [Fact]
+        public void getLessonsWithGrade_VariableErrorWithNullValue_HandlesHisReference()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithGrade(""))
+                    .Returns(new List<Lesson>{
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockManager = mock.Create<Manager>();
+                Error error = null;
+                mockManager.getLessonsWithGrade(null, null, ref error);
+                Assert.NotNull(error);                
+            }
+        }
+        [Theory]
+        [InlineData(null,"4")]
+        [InlineData("1",null)]
+        public void getLessonsWithGrade_withNullValueOnStartOrOnEndVariablesWhileOneOfThemHasValue_GivesErrorMessagesOnErrorObject(string start , string end)
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("Start or end variables are wrong")));
+                Assert.Null(lessons);
+            }
+        }
+        [Theory]
+        [InlineData("4","invalid")]
+        [InlineData("invalid","4")]
+        public void getLessonsWithGrade_repositoryDoesnotFindsTheMappedSemesters_GivesErrorMessageOnErrorObject(string start , string end)
+        {            
+            using (var mock = AutoMock.GetLoose())
+            {                
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns((new string[2] { (start.Equals("invalid") ?null:start), (end.Equals("invalid") ? null : end) }));
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.Null(lessons);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("The selected semester range is not mapped")));
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_startVariableGreatterThanEndVariable_GivesErrorMessageOnErrorObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "5";
+                string end = "4";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start,end))
+                    .Returns((new string[2]{start,end }));
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.Null(lessons);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("Start variable was greater than end variable")));
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_onSpecifiedPeriod_ReturnsLessonsWithoutError()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "2";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns((new string[2] { start, end }));
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getLessonsWithGradeOnSpecificPeriod(start,end,""))
+                    .Returns(new List<Lesson>() { 
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.NotNull(lessons);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons.Count > 0);
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_getAllLessons_ReturnsLessonsWithoutError()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = null;
+                string end = null;
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithGrade(""))
+                    .Returns(new List<Lesson>() {
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.NotNull(lessons);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons.Count > 0);
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_DatabaseCrashesOnMethodWhileTryingToGetMappedRange_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "3";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Throws<Exception>();                
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_DatabaseCrasheOnMethodWhileTryingToRetrieveDataOnSpecifiedPeriod_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "3";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns(new string[2] { start, end });
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getLessonsWithGradeOnSpecificPeriod(start, end,""))
+                    .Throws<Exception>();
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);                
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+        [Fact]
+        public void getLessonsWithGrade_DatabaseCrashesOnMethodWhileTryingToRetrieveAllLessons_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = null;
+                string end = null;               
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithGrade(""))
+                    .Throws<Exception>();
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        [Fact]
+        public void getLessonsWithNoGrade_VariableErrorWithNullValue_HandlesHisReference()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithGrade(""))
+                    .Returns(new List<Lesson>{
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockManager = mock.Create<Manager>();
+                Error error = null;
+                mockManager.getLessonsWithNoGrade(null, null, ref error);
+                Assert.NotNull(error);
+            }
+        }
+        [Theory]
+        [InlineData(null, "4")]
+        [InlineData("1", null)]
+        public void getLessonsWithNoGrade_withNullValueOnStartOrOnEndVariablesWhileOneOfThemHasValue_GivesErrorMessagesOnErrorObject(string start, string end)
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("Start or end variables are wrong")));
+                Assert.Null(lessons);
+            }
+        }
+        [Theory]
+        [InlineData("4", "invalid")]
+        [InlineData("invalid", "4")]
+        public void getLessonsWithNoGrade_repositoryDoesnotFindsTheMappedSemesters_GivesErrorMessageOnErrorObject(string start, string end)
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns((new string[2] { (start.Equals("invalid") ? null : start), (end.Equals("invalid") ? null : end) }));
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.Null(lessons);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("The selected semester range is not mapped")));
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_startVariableGreatterThanEndVariable_GivesErrorMessageOnErrorObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "5";
+                string end = "4";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns((new string[2] { start, end }));
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.Null(lessons);
+                Assert.True(error.Msg.Length > 0);
+                Assert.True((error.Msg.Contains("Start variable was greater than end variable")));
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_onSpecifiedPeriod_ReturnsLessonsWithoutError()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "2";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns((new string[2] { start, end }));
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getLessonsWithNoGradeOnSpecificPeriod(start, end,""))
+                    .Returns(new List<Lesson>() {
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.NotNull(lessons);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons.Count > 0);
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_getAllLessons_ReturnsLessonsWithoutError()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = null;
+                string end = null;
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithNoGrade(""))
+                    .Returns(new List<Lesson>() {
+                        new Lesson(),
+                        new Lesson(),
+                        new Lesson(),
+                    });
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.NotNull(lessons);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons.Count > 0);
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_DatabaseCrashesOnMethodWhileTryingToGetMappedRange_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "3";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Throws<Exception>();
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_DatabaseCrasheOnMethodWhileTryingToRetrieveDataOnSpecifiedPeriod_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = "1";
+                string end = "3";
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getMappedSemestersRange(start, end))
+                    .Returns(new string[2] { start, end });
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getLessonsWithGradeOnSpecificPeriod(start, end,""))
+                    .Throws<Exception>();
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+        [Fact]
+        public void getLessonsWithNoGrade_DatabaseCrashesOnMethodWhileTryingToRetrieveAllLessons_ReturnsNullListLessonObject()
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                string start = null;
+                string end = null;
+                mock.Mock<IRepos>()
+                    .Setup(db => db.getAllLessonsWithGrade(""))
+                    .Throws<Exception>();
+                var mockedManager = mock.Create<Manager>();
+                Error error = null;
+                IList<Lesson> lessons = mockedManager.getLessonsWithNoGrade(start, end, ref error);
+                Assert.NotNull(error);
+                Assert.True(error.Msg.Length == 0);
+                Assert.True(lessons == null);
+            }
+        }
+    }
+}

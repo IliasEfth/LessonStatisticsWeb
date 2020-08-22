@@ -9,27 +9,39 @@ namespace StatisticsWebRepository.Repository
 {
     public class MySqlDB : IRepos
     {
-        public IList<Lesson> getLessonsWithGradeOnSpecificPeriod(string start, string end)
+        public IList<Lesson> getLessonsWithGradeOnSpecificPeriod(string start, string end , string token)
         {
             throw new NotImplementedException();
         }
-        public IList<Lesson> getAllLessonsWithGrade()
+        public IList<Lesson> getAllLessonsWithGrade(string token)
         {
             throw new NotImplementedException();
         }
-        public IList<Lesson> getLessonsWithNoGradeOnSpecificPeriod(string start, string end)
+        public IList<Lesson> getLessonsWithNoGradeOnSpecificPeriod(string start, string end , string token)
         {
             throw new NotImplementedException();
         }
-        public IList<Lesson> getAllLessonsNoWithGrade()
+        public IList<Lesson> getAllLessonsWithNoGrade(string token)
         {
             throw new NotImplementedException();
         }
         public bool updateLesson(IList<UpdateLesson> lessonList)
         {
             throw new NotImplementedException();
-        }  
+        }
         public bool lessonListWithIdExists(IList<UpdateLesson> lessonList)
+        {
+            throw new NotImplementedException();
+        }
+        public string getMappedSemester(string semester)
+        {
+            throw new NotImplementedException();
+        }
+        public string[] getMappedSemestersRange(string start, string end)
+        {
+            throw new NotImplementedException();
+        }
+        public bool userExists(User user)
         {
             throw new NotImplementedException();
         }

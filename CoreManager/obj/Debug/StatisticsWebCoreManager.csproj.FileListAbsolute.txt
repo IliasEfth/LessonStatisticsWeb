@@ -8,3 +8,14 @@ C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepos
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CopyComplete
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\CoreManager.dll
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\CoreManager.pdb
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.dll
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.dll
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.pdb
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.pdb
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CopyComplete
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\CoreManager.dll
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\CoreManager.pdb
