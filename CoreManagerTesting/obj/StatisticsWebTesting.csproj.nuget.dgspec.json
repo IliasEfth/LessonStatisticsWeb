@@ -1,0 +1,201 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
+        "projectName": "StatisticsWebTesting",
+        "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManagerTesting\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Autofac.Extras.Moq": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.13.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.abstractions": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "xunit.analyzers": {
+              "target": "Package",
+              "version": "[0.10.0, )"
+            },
+            "xunit.assert": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.extensibility.execution": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
+        "projectName": "StatisticsWebCoreManager",
+        "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj",
+        "projectName": "StatisticsWebModels",
+        "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
+        "projectName": "StatisticsWebRepository",
+        "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
+        "projectName": "StatisticsWeb",
+        "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Ilias\\Projects\\Web\\StatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

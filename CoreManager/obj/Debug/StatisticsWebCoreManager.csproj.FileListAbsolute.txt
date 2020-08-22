@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\CoreManager.dll
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\CoreManager.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\CoreManager.dll
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\CoreManager.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csprojAssemblyReference.cache
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.dll
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.dll
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CopyComplete

@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebRepository.dll
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebRepository.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.dll
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.csprojAssemblyReference.cache
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebModels.dll
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebModels.pdb
+C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.csproj.CopyComplete
