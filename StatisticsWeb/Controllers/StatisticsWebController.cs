@@ -20,66 +20,19 @@ namespace StatisticsWeb.Controllers
         [HttpGet]       
         public IHttpActionResult getLessonsWithGrade([FromUri]string start , [FromUri]string end)
         {
-            IList<Lesson> lessons = null;
-            try
-            {
-                lessons = manager.getLessonsWithGrade(start, end);
-            }            
-            catch(ArgumentNullException ex)
-            {
-                return BadRequest();
-            }
-            catch(Exception)
-            {
-                return NotFound();
-            }            
-            return Ok(lessons);
+            throw new NotImplementedException();                        
         }//done manager
         [HttpPut]
         public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList)
         {
-            UpdateLessonsValues value;
-            try
-            {
-                value = manager.updateLesson(lessonList);                
-            } 
-            catch(NullReferenceException)
-            {
-                return BadRequest(UpdateErrorCodes.NoInstance.ToString());
-            }
-            catch(ArgumentException)
-            {
-                return BadRequest(UpdateErrorCodes.InvalidArguments.ToString());
-            }
-            catch(Exception)
-            {
-                return NotFound();
-            }
-            if(value.Equals(UpdateLessonsValues.LessonExistsFails))
-            {
-                return NotFound();
-            }
-            return Ok();
+            throw new NotImplementedException();                        
         }
         [Route("lessons/nograde")]
         [HttpGet]
         public IHttpActionResult getLessonsWithNoGrade([FromUri]string start, [FromUri]string end)
         {
-            IList<Lesson> lessons = null;
-            try
-            {
-                lessons = manager.getLessonsWithNoGrade(start, end);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return BadRequest();
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
-            return Ok(lessons);
-        }//done manager
+            throw new NotImplementedException();                        
+        }
         [Route("AvgGrade")]
         [HttpGet]
         public IHttpActionResult avgGrade()
