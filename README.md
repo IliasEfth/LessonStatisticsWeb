@@ -1,4 +1,4 @@
-# WebProjects
+# LessonStatisticsWeb
 
 That project is on implementing mode.
 The perpose of this project is to try some tools.
