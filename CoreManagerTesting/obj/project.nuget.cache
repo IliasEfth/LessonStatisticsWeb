@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fmaFQFqJytNZYxU1VhK/y4pJcpbpxTsIDRDIpmMKBMnp2IorLrFWSD6IedFlCTvufXpWSo6AuCn0BekkRo1BCg==",
+  "dgSpecHash": "lnCfftTZvY4z4fy7AeZ17+W6laNBtXGCSimOknFY6BvFy/EBVJZGWhm5n5FGcCf7RRx2TPEKLABwnElHQ8Cq4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
+  "projectFilePath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\autofac\\5.1.1\\autofac.5.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\autofac.extras.moq\\5.0.1\\autofac.extras.moq.5.0.1.nupkg.sha512",
