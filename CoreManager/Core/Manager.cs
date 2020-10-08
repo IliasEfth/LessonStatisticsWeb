@@ -47,7 +47,7 @@ namespace StatisticsWebCoreManager.Core
                 errorMessages.Add("Start or end variables are wrong");
             }
             else
-            {
+            {                
                 string[] tmpStartEndStorage = null;
                 try
                 {
