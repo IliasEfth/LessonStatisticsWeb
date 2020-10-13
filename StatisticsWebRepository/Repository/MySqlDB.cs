@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore; 
 using StatisticsWebModels;
 using StatisticsWebRepository.IRepository;
+using StatisticsWebDBModel.DBRelation;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
+
 namespace StatisticsWebRepository.Repository
 {
     public class MySqlDB : IRepos
@@ -43,7 +48,37 @@ namespace StatisticsWebRepository.Repository
         }
         public bool userExists(User user)
         {
-            throw new NotImplementedException();
+            bool exists = false;
+            using (var context = new StatisticsWebDB())
+            {                
+                exists = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password)) != null ? true : false;
+            }
+            return exists;
+        }
+        public bool createIfNotExists()
+        {
+            bool exists = false;
+            using (var context = new StatisticsWebDB())
+            {
+                if((context.Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
+                {                    
+                    exists = true;
+                }
+                else
+                {
+                    context.Database.EnsureCreated();
+                    Init();
+                }
+            }                                   
+            return exists;
+        }
+        public void Init()
+        {
+            using (var context = new StatisticsWebDB())
+            {
+                context.Users.Add(new User { Name = "test", Password = "test" });
+                context.SaveChanges();
+            }
         }
     }
 }

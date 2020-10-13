@@ -9,11 +9,12 @@ using StatisticsWebModels;
 using System.ComponentModel.DataAnnotations.Schema;
 using StatisticsWebRepository.IRepository;
 using StatisticsWebRepository.Repository;
+
 namespace StatisticsWeb.Authentication
 {
     public class UsersAuthentication: OAuthAuthorizationServerProvider
     {
-        private static IRepos database = new InMemory();//TODO: Change to real Database
+        private static IRepos database = new MySqlDB();
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
@@ -21,7 +22,7 @@ namespace StatisticsWeb.Authentication
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             ClaimsIdentity id = new ClaimsIdentity(context.Options.AuthenticationType);            
-            if (database.userExists(new User() { UserName = context.UserName , Password = context.Password}))
+            if (database.userExists(new User() { Name = context.UserName , Password = context.Password}))
             {
                 id.AddClaim(new Claim(ClaimTypes.Role, "user"));
                 context.Validated(id);

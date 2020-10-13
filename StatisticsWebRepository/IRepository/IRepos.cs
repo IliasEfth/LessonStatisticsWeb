@@ -18,5 +18,7 @@ namespace StatisticsWebRepository.IRepository
         string getMappedSemester(string semester);
         string[] getMappedSemestersRange(string start, string end);
         bool userExists(User user);
+        bool createIfNotExists();
+        void Init();
     }
 }

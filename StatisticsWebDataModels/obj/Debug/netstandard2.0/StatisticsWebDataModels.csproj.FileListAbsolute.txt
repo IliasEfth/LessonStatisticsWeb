@@ -1,0 +1,5 @@
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\StatisticsWebDataModels\bin\Debug\netstandard2.0\StatisticsWebDataModels.deps.json
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\StatisticsWebDataModels\bin\Debug\netstandard2.0\StatisticsWebDataModels.dll
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\StatisticsWebDataModels\obj\Debug\netstandard2.0\StatisticsWebDataModels.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\StatisticsWebDataModels\obj\Debug\netstandard2.0\StatisticsWebDataModels.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\IliasEfth\LessonStatisticsWeb\StatisticsWebDataModels\obj\Debug\netstandard2.0\StatisticsWebDataModels.AssemblyInfo.cs

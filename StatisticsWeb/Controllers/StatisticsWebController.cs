@@ -14,13 +14,19 @@ namespace StatisticsWeb.Controllers
         private static IManager manager;
         static StatisticsWebController()
         {            
-            manager = new Manager(new InMemory());
+            manager = new Manager(new MySqlDB());
         }
         [Route("lessons")]
         [HttpPut]
         public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList )
         {
             throw new NotImplementedException();                        
+        }
+        [Route("test")]
+        [HttpGet]
+        public IHttpActionResult test()
+        {
+            return Ok("mpike");
         }
         [Route("lessons/graded")]        
         [HttpGet]       

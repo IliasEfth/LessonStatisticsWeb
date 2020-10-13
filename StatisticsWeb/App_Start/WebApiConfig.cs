@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using StatisticsWebRepository.Repository;
 
 namespace StatisticsWeb
 {
@@ -19,6 +20,17 @@ namespace StatisticsWeb
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            try
+            {
+                var db = new MySqlDB();
+                db.createIfNotExists();                
+            }
+            catch(Exception ex)
+            {
+                //make file logger for execute start
+                Console.Out.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
 }

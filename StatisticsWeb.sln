@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsWebCoreManager", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsWebRepository", "StatisticsWebRepository\StatisticsWebRepository.csproj", "{13B25113-CFBB-4B0C-851B-365086BB2697}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsWebDBModel", "StatisticsWebDBModel\StatisticsWebDBModel.csproj", "{F3C73A15-727B-40CA-803C-E6E7469CC53F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{13B25113-CFBB-4B0C-851B-365086BB2697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B25113-CFBB-4B0C-851B-365086BB2697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13B25113-CFBB-4B0C-851B-365086BB2697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C73A15-727B-40CA-803C-E6E7469CC53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C73A15-727B-40CA-803C-E6E7469CC53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C73A15-727B-40CA-803C-E6E7469CC53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C73A15-727B-40CA-803C-E6E7469CC53F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {}
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
         "projectName": "StatisticsWebTesting",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\StatisticsWebTesting.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManagerTesting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,17 +31,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj"
               }
             }
           }
@@ -125,19 +125,19 @@
         }
       }
     },
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
         "projectName": "StatisticsWebCoreManager",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
               }
             }
           }
@@ -147,26 +147,114 @@
         "net472": {}
       }
     },
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\StatisticsWebDBModel.csproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\StatisticsWebDBModel.csproj",
+        "projectName": "StatisticsWebDBModel",
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\StatisticsWebDBModel.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "MySql.Data.Entity": {
+              "target": "Package",
+              "version": "[6.10.9, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj",
         "projectName": "StatisticsWebModels",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
         "projectName": "StatisticsWebRepository",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\StatisticsWebDBModel.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebDBModel\\StatisticsWebDBModel.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
               }
             }
           }
@@ -176,22 +264,22 @@
         "net472": {}
       }
     },
-    "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
+    "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
         "projectName": "StatisticsWeb",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWeb\\StatisticsWeb.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\CoreManager\\StatisticsWebCoreManager.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebModels\\StatisticsWebModels.csproj"
               },
-              "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
-                "projectPath": "C:\\Users\\User\\Source\\Repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
+              "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\IliasEfth\\LessonStatisticsWeb\\StatisticsWebRepository\\StatisticsWebRepository.csproj"
               }
             }
           }
