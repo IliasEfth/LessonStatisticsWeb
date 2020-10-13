@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 using StatisticsWebModels;
 using StatisticsWebRepository.IRepository;
 using StatisticsWebDBModel.DBRelation;
@@ -13,8 +13,8 @@ using Microsoft.EntityFrameworkCore.Storage;
 namespace StatisticsWebRepository.Repository
 {
     public class MySqlDB : IRepos
-    {
-        public IList<Lesson> getLessonsWithGradeOnSpecificPeriod(string start, string end , string token)
+    {        
+        public IList<Lesson> getLessonsWithGradeOnSpecificPeriod(string start, string end, string token)
         {
             throw new NotImplementedException();
         }
@@ -22,7 +22,7 @@ namespace StatisticsWebRepository.Repository
         {
             throw new NotImplementedException();
         }
-        public IList<Lesson> getLessonsWithNoGradeOnSpecificPeriod(string start, string end , string token)
+        public IList<Lesson> getLessonsWithNoGradeOnSpecificPeriod(string start, string end, string token)
         {
             throw new NotImplementedException();
         }
@@ -48,20 +48,19 @@ namespace StatisticsWebRepository.Repository
         }
         public bool userExists(User user)
         {
-            bool exists = false;
-            using (var context = new StatisticsWebDB())
-            {                
-                exists = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password)) != null ? true : false;
-            }
-            return exists;
+            return execute<bool>((context) => {
+                bool exists = false;                
+                exists = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password)) != null ? true : false;                
+                return exists;
+            });
         }
         public bool createIfNotExists()
         {
-            bool exists = false;
-            using (var context = new StatisticsWebDB())
+            return execute<bool>((context) =>
             {
-                if((context.Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
-                {                    
+                bool exists = false;
+                if ((context.Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
+                {
                     exists = true;
                 }
                 else
@@ -69,16 +68,25 @@ namespace StatisticsWebRepository.Repository
                     context.Database.EnsureCreated();
                     Init();
                 }
-            }                                   
-            return exists;
+                return exists;
+            });          
         }
         public void Init()
-        {
-            using (var context = new StatisticsWebDB())
-            {
+        {            
+            execute<bool>((context) => {
                 context.Users.Add(new User { Name = "test", Password = "test" });
                 context.SaveChanges();
+                return true;
+            });
+        }
+        private T execute<T>(Func<StatisticsWebDB, T> lambda)
+        {
+            T value;
+            using (var context = new StatisticsWebDB())
+            {
+               value = lambda(context);
             }
+            return value;
         }
     }
 }
