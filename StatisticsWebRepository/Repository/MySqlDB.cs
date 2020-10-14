@@ -46,12 +46,12 @@ namespace StatisticsWebRepository.Repository
         {
             throw new NotImplementedException();
         }
-        public bool userExists(User user)
+        public User userExists(User user)
         {
-            return execute<bool>((context) => {
-                bool exists = false;                
-                exists = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password)) != null ? true : false;                
-                return exists;
+            return execute<User>((context) => {
+                User tmp;               
+                tmp = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password));                
+                return tmp;
             });
         }
         public bool createIfNotExists()

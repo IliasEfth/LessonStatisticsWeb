@@ -5,6 +5,9 @@ using StatisticsWebModels;
 using StatisticsWebCoreManager.Core;
 using StatisticsWebCoreManager.ICore;
 using StatisticsWebRepository.Repository;
+using System.Security.Claims;
+using System.Security.Principal;
+
 namespace StatisticsWeb.Controllers
 {
     [RoutePrefix("api/StatisticsWeb")]
@@ -19,7 +22,7 @@ namespace StatisticsWeb.Controllers
         [Route("lessons")]
         [HttpPut]
         public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList )
-        {
+        {            
             throw new NotImplementedException();                        
         }
         [Route("test")]
@@ -39,6 +42,22 @@ namespace StatisticsWeb.Controllers
         public IHttpActionResult getLessonsWithNoGrade([FromUri]string start, [FromUri]string end , [FromUri]int? pageOffset, [FromUri]int? itemsCounter)
         {
             throw new NotImplementedException();                        
-        }        
+        }    
+        
+        private int getUserId(IPrincipal user , out bool failed)
+        {
+            int value = 0;
+            failed = true;
+            var id = (ClaimsIdentity)user.Identity;
+            foreach(var claim in id.Claims)
+            {
+                if (claim.Type.Equals(ClaimTypes.NameIdentifier))
+                {
+                    value = int.Parse(claim.Value);
+                    failed = false;
+                }
+            }
+            return value;
+        }
     }
 }

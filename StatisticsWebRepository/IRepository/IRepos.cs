@@ -17,7 +17,7 @@ namespace StatisticsWebRepository.IRepository
         bool lessonListWithIdExists(IList<UpdateLesson> lessonList);
         string getMappedSemester(string semester);
         string[] getMappedSemestersRange(string start, string end);
-        bool userExists(User user);
+        User userExists(User user);
         bool createIfNotExists();
         void Init();
     }

@@ -35,7 +35,7 @@ namespace StatisticsWebRepository.Repository
         {
             throw new NotImplementedException();
         }
-        public bool userExists(User user)
+        public User userExists(User user)
         {
             throw new NotImplementedException();
         }

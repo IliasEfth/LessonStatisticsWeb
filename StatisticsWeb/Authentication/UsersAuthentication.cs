@@ -21,10 +21,12 @@ namespace StatisticsWeb.Authentication
         }
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            ClaimsIdentity id = new ClaimsIdentity(context.Options.AuthenticationType);            
-            if (database.userExists(new User() { Name = context.UserName , Password = context.Password}))
+            ClaimsIdentity id = new ClaimsIdentity(context.Options.AuthenticationType);
+            User user = database.userExists(new User() { Name = context.UserName, Password = context.Password });
+            if (user != null)
             {
-                id.AddClaim(new Claim(ClaimTypes.Role, "user"));
+                id.AddClaim(new Claim(ClaimTypes.Role, "student"));
+                id.AddClaim(new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()));                
                 context.Validated(id);
             }
             else
