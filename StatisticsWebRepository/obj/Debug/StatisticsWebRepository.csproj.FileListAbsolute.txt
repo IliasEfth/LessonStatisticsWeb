@@ -6,3 +6,5 @@ C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\Statis
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebModels.dll
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\bin\Debug\StatisticsWebModels.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.csproj.CopyComplete
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.csprojAssemblyReference.cache
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebRepository\obj\Debug\StatisticsWebRepository.csproj.CoreCompileInputs.cache

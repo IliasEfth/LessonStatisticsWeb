@@ -8,3 +8,4 @@ C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepos
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebModels.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\bin\Debug\StatisticsWebRepository.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CopyComplete
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\CoreManager\obj\Debug\StatisticsWebCoreManager.csproj.CoreCompileInputs.cache

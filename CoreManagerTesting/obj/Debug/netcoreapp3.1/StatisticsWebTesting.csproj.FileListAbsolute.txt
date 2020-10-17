@@ -134,3 +134,6 @@ C:\Users\User\Desktop\api\StatisticsWeb\CoreManagerTesting\bin\Debug\netcoreapp3
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManagerTesting\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.xml
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManagerTesting\bin\Debug\netcoreapp3.1\System.Web.Razor.xml
 C:\Users\User\Desktop\api\StatisticsWeb\CoreManagerTesting\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.xml
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\CoreManagerTesting\obj\Debug\netcoreapp3.1\StatisticsWebTesting.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\CoreManagerTesting\obj\Debug\netcoreapp3.1\StatisticsWebTesting.AssemblyInfo.cs
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\CoreManagerTesting\obj\Debug\netcoreapp3.1\StatisticsWebTesting.csproj.CoreCompileInputs.cache

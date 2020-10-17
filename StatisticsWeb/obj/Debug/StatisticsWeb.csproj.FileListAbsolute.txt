@@ -100,3 +100,4 @@ C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWeb\bin\CoreManager.dll
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWeb\bin\CoreManager.pdb
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWeb\bin\StatisticsWebRepository.dll
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWeb\bin\StatisticsWebRepository.pdb
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWeb\obj\Debug\StatisticsWeb.csproj.CoreCompileInputs.cache
