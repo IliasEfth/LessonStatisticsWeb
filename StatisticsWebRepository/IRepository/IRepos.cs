@@ -13,8 +13,8 @@ namespace StatisticsWebRepository.IRepository
         IList<Lesson> getAllLessonsWithGrade(string token);
         IList<Lesson> getLessonsWithNoGradeOnSpecificPeriod(string start, string end , string token);
         IList<Lesson> getAllLessonsWithNoGrade(string token);
-        bool updateLesson(IList<UpdateLesson> lessonList);
-        bool lessonListWithIdExists(IList<UpdateLesson> lessonList);
+        bool updateLesson(IList<Lesson> lessonList);
+        bool lessonListWithIdExists(IList<Lesson> lessonList);
         string getMappedSemester(string semester);
         string[] getMappedSemestersRange(string start, string end);
         User userExists(User user);

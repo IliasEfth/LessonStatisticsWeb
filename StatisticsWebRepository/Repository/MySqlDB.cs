@@ -9,6 +9,7 @@ using StatisticsWebRepository.IRepository;
 using StatisticsWebDBModel.DBRelation;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
+using StatisticsWebDBModel.DBHelpers;
 
 namespace StatisticsWebRepository.Repository
 {
@@ -30,11 +31,11 @@ namespace StatisticsWebRepository.Repository
         {
             throw new NotImplementedException();
         }
-        public bool updateLesson(IList<UpdateLesson> lessonList)
+        public bool updateLesson(IList<Lesson> lessonList)
         {
             throw new NotImplementedException();
         }
-        public bool lessonListWithIdExists(IList<UpdateLesson> lessonList)
+        public bool lessonListWithIdExists(IList<Lesson> lessonList)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +49,7 @@ namespace StatisticsWebRepository.Repository
         }
         public User userExists(User user)
         {
-            return execute<User>((context) => {
+            return DBHelpers.execute<User>((context) => {
                 User tmp;               
                 tmp = context.Users.SingleOrDefault(u => u.Name.Equals(user.Name) && u.Password.Equals(user.Password));                
                 return tmp;
@@ -56,7 +57,7 @@ namespace StatisticsWebRepository.Repository
         }
         public bool createIfNotExists()
         {
-            return execute<bool>((context) =>
+            return DBHelpers.execute<bool>((context) =>
             {
                 bool exists = false;
                 if ((context.Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists())
@@ -72,21 +73,12 @@ namespace StatisticsWebRepository.Repository
             });          
         }
         public void Init()
-        {            
-            execute<bool>((context) => {
+        {
+            DBHelpers.execute<bool>((context) => {
                 context.Users.Add(new User { Name = "test", Password = "test" });
                 context.SaveChanges();
                 return true;
             });
-        }
-        private T execute<T>(Func<StatisticsWebDB, T> lambda)
-        {
-            T value;
-            using (var context = new StatisticsWebDB())
-            {
-               value = lambda(context);
-            }
-            return value;
-        }
+        }        
     }
 }
