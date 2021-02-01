@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreValidator\Validator.cs" />
     <Compile Include="Core\Manager.cs" />
     <Compile Include="ICore\IManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

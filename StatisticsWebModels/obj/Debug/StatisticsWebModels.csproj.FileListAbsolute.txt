@@ -3,3 +3,9 @@ C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebModels\bin\Debug\Statistics
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.csprojAssemblyReference.cache
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.dll
 C:\Users\User\Desktop\api\StatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.pdb
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\bin\Debug\StatisticsWebModels.dll
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\bin\Debug\StatisticsWebModels.pdb
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.dll
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.pdb
+C:\Users\User\source\repos\IliasEfth\LessonStatisticsWeb\StatisticsWebModels\obj\Debug\StatisticsWebModels.csprojAssemblyReference.cache

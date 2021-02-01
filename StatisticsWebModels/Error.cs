@@ -8,7 +8,6 @@ namespace StatisticsWebModels
 {
     public class Error
     {
-        public Error() { }
-        public string[] Msg { get; set; }        
+        public List<string> Msg { get; set; }        
     }
 }

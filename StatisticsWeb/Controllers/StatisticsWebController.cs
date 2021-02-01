@@ -7,6 +7,10 @@ using StatisticsWebCoreManager.ICore;
 using StatisticsWebRepository.Repository;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Threading.Tasks;
+using StatisticsWebModels.DBTableModels.Converters.LessonInterfaces;
+using StatisticsWebModels.ContextParsers;
+using Newtonsoft.Json.Linq;
 
 namespace StatisticsWeb.Controllers
 {
@@ -16,40 +20,107 @@ namespace StatisticsWeb.Controllers
     {
         private static IManager manager;
         static StatisticsWebController()
-        {            
-            manager = new Manager(new MySqlDB());
+        {
+            manager = new Manager(new Database());
         }
         [Route("lessons")]
         [HttpPut]
-        public IHttpActionResult updateLesson([FromBody]IList<UpdateLesson> lessonList )
-        {            
-            throw new NotImplementedException();                        
+        public async Task<IHttpActionResult> updateLesson([FromBody] IList<UpdateLesson> lessonList)
+        {
+            bool failed = false;
+            var token = getUserId(RequestContext.Principal, out failed);
+            if (failed)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                try
+                {
+                    var result = await manager.updateLesson(token, lessonList);
+                    return Ok(result);
+                }
+                catch (Exception ex)
+                {
+                    return InternalServerError();
+                }
+            }
         }
-        [Route("test")]
+        [HttpPost]
+        public async Task<IHttpActionResult> postLesson([FromBody] IList<UpdateLesson> lessonList, [FromBody] Page page)
+        {
+            bool failed = false;
+            var token = getUserId(RequestContext.Principal, out failed);
+            if (failed)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                try
+                {
+                    var result = await manager.postLesson(token, lessonList);
+                    return Ok(result);
+                }
+                catch (Exception ex)
+                {
+                    return InternalServerError();
+                }
+            }
+        }
+        [Route("lessons/graded")]
         [HttpGet]
-        public IHttpActionResult test()
+        public async Task<IHttpActionResult> getLessonsWithGrade([FromBody] Page page, [FromUri(Name = "start")] int? start = null, [FromUri(Name = "end")] int? end = null)
         {
-            return Ok("mpike");
-        }
-        [Route("lessons/graded")]        
-        [HttpGet]       
-        public IHttpActionResult getLessonsWithGrade([FromUri]string start , [FromUri]string end , [FromUri]int? pageOffset, [FromUri]int? itemsCounter)
-        {
-            throw new NotImplementedException();                        
+            bool failed = false;
+            var token = getUserId(RequestContext.Principal, out failed);
+            if (failed)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                try
+                {
+                    var result = await manager.getLessonsWithGrade(start, end, token, page);
+                    return Ok(result);
+                }
+                catch (Exception ex)
+                {
+                    return InternalServerError();
+                }
+            }
         }
         [Route("lessons/nograded")]
         [HttpGet]
-        public IHttpActionResult getLessonsWithNoGrade([FromUri]string start, [FromUri]string end , [FromUri]int? pageOffset, [FromUri]int? itemsCounter)
+        public async Task<IHttpActionResult> getLessonsWithNoGrade([FromUri] int? start, [FromUri] int? end, [FromBody] Page page)
         {
-            throw new NotImplementedException();                        
-        }    
-        
-        private int getUserId(IPrincipal user , out bool failed)
+            bool failed = false;
+            var token = getUserId(RequestContext.Principal, out failed);
+            if (failed)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                try
+                {
+                    var result = await manager.getLessonsWithNoGrade(start, end, token, page);
+                    return Ok(result);
+                }
+                catch (Exception ex)
+                {
+                    return InternalServerError();
+                }
+            }
+        }
+
+        private int getUserId(IPrincipal user, out bool failed)
         {
             int value = 0;
             failed = true;
             var id = (ClaimsIdentity)user.Identity;
-            foreach(var claim in id.Claims)
+            foreach (var claim in id.Claims)
             {
                 if (claim.Type.Equals(ClaimTypes.NameIdentifier))
                 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using StatisticsWebRepository.Repository;
 
@@ -22,8 +23,8 @@ namespace StatisticsWeb
             );
             try
             {
-                var db = new MySqlDB();
-                db.createIfNotExists();                
+                var db = new Database();
+                db.createIfNotExists();
             }
             catch(Exception ex)
             {

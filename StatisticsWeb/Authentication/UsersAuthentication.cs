@@ -12,21 +12,21 @@ using StatisticsWebRepository.Repository;
 
 namespace StatisticsWeb.Authentication
 {
-    public class UsersAuthentication: OAuthAuthorizationServerProvider
+    public class UsersAuthentication : OAuthAuthorizationServerProvider
     {
-        private static IRepos database = new MySqlDB();
+        private static IRepos database = new Database();
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
         }
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {            
-            User user = database.userExists(new User() { Name = context.UserName, Password = context.Password });
+        {
+            User user = await database.userExists(new User() { Name = context.UserName, Password = context.Password });
             if (user != null)
             {
                 ClaimsIdentity id = new ClaimsIdentity(context.Options.AuthenticationType);
                 id.AddClaim(new Claim(ClaimTypes.Role, "student"));
-                id.AddClaim(new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()));                
+                id.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
                 context.Validated(id);
             }
             else

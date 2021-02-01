@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StatisticsWebDBModel.DBHelpers
 {
@@ -12,7 +13,7 @@ namespace StatisticsWebDBModel.DBHelpers
             T value;
             using (var context = new StatisticsWebDB())
             {
-                value = lambda(context);
+                value = lambda.Invoke(context);
             }
             return value;
         }

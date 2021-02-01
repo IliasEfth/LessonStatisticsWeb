@@ -170,8 +170,7 @@
   <ItemGroup>
     <Compile Include="IRepository\IRepos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\InMemory.cs" />
-    <Compile Include="Repository\MySqlDB.cs" />
+    <Compile Include="Repository\Database.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StatisticsWebDBModel\StatisticsWebDBModel.csproj">

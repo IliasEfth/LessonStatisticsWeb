@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StatisticsWebModels;
+using StatisticsWebModels.ContextParsers;
+using StatisticsWebModels.DBTableModels.Converters.LessonConverter;
+using StatisticsWebModels.DBTableModels.Converters.LessonInterfaces;
 namespace StatisticsWebCoreManager.ICore
 {
     public interface IManager
     {
-        IList<Lesson> getLessonsWithGrade(string start , string end , ref Error error);
-        IList<Lesson> getLessonsWithNoGrade(string start , string end , ref Error error);
-        bool updateLesson(IList<UpdateLesson> lessonList , ref Error error);       
+        Task<ApiResponse<PaggingRes<IList<LessonInfo>>>> getLessonsWithGrade(int? start , int? end , int? token  , Page page);
+        Task<ApiResponse<PaggingRes<IList<LessonInfo>>>> getLessonsWithNoGrade(int? start , int? end , int? token , Page page);
+        Task<ApiResponse<IList<LessonInfo>>> updateLesson(int? token , IList<UpdateLesson> lessonList);
+        Task<ApiResponse<IList<LessonInfo>>> postLesson(int? token, IList<UpdateLesson> lessonList);
     }
 }

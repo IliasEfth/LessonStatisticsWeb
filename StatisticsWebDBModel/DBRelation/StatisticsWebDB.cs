@@ -13,6 +13,7 @@ namespace StatisticsWebDBModel.DBRelation
         public DbSet<User> Users { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<MappedSemester> MappedSemesters { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,7 +35,6 @@ namespace StatisticsWebDBModel.DBRelation
                 entity.Property(e => e.Name).IsRequired();
                 entity.HasOne(d => d.University)
                   .WithMany(p => p.Departments);
-                
             });
             modelBuilder.Entity<User>(entity =>
             {
@@ -42,22 +42,29 @@ namespace StatisticsWebDBModel.DBRelation
                 entity.Property(e => e.Name).IsRequired();
                 entity.Property(e => e.Password).IsRequired();
                 entity.HasOne(d => d.Department)
-                  .WithMany(p => p.User);                 
+                  .WithMany(p => p.User);
             });
             modelBuilder.Entity<Lesson>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
                 entity.HasOne(d => d.Department)
-                  .WithMany(p => p.Lesson);              
+                  .WithMany(p => p.Lesson);
             });
             modelBuilder.Entity<Grade>(entity =>
             {
-                entity.HasKey(e => e.Id );
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.Graded).IsRequired();
                 entity.HasOne(d => d.Lesson)
                   .WithMany(p => p.Grades);
                 entity.HasOne(d => d.User);
+            });
+            modelBuilder.Entity<MappedSemester>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Start).IsRequired();
+                entity.Property(e => e.End).IsRequired();
+                entity.HasOne(e => e.Department);
             });
         }
     }

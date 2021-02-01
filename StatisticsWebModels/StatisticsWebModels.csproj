@@ -41,11 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBTableModels\Interfaces\DepartmentInterfaces\IDepartment.cs" />
-    <Compile Include="DBTableModels\Interfaces\GradeInterfaces\IGrade.cs" />
-    <Compile Include="DBTableModels\Interfaces\LessonInterfaces\ILesson.cs" />
-    <Compile Include="DBTableModels\Interfaces\UserInterfaces\IUser.cs" />
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="ContextParsers\MappedSemester.cs" />
+    <Compile Include="ContextParsers\Page.cs" />
+    <Compile Include="ContextParsers\PaggingRes.cs" />
+    <Compile Include="DBTableModels\Converters\DepartmentInterfaces\IDepartment.cs" />
+    <Compile Include="DBTableModels\Converters\GradeInterfaces\IGrade.cs" />
+    <Compile Include="DBTableModels\Converters\GradeInterfaces\UpdateGrade.cs" />
+    <Compile Include="DBTableModels\Converters\LessonInterfaces\LessonInfo.cs" />
+    <Compile Include="DBTableModels\Converters\LessonInterfaces\UpdateLesson.cs" />
+    <Compile Include="DBTableModels\Converters\UserInterfaces\IUser.cs" />
     <Compile Include="DBTableModels\Models\Department.cs" />
+    <Compile Include="DBTableModels\Models\MappedSemester.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="DBTableModels\Models\Grade.cs" />
     <Compile Include="DBTableModels\Models\Lesson.cs" />
@@ -54,7 +61,7 @@
     <Compile Include="DBTableModels\Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DBTableModels\Interfaces\UniversityInterfaces\" />
+    <Folder Include="DBTableModels\Converters\UniversityInterfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

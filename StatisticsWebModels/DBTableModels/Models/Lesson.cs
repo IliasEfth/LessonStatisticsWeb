@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using StatisticsWebModels.DBTableModels.Interfaces.LessonInterfaces;
+using StatisticsWebModels.DBTableModels.Converters.LessonConverter;
 
 namespace StatisticsWebModels
 {
-    public class Lesson : ILesson
+    public class Lesson
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Semester { get; set; }
-        public string Type { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual int Semester { get; set; }
+        public virtual string Type { get; set; }
         public virtual Department Department { get; set; }
         public virtual ICollection<Grade> Grades { get; set; }
-        public float ECTS { get; set; }        
+        public virtual float ECTS { get; set; }        
     }
 }
